@@ -180,7 +180,7 @@ def figures_compaction_only():
                'UN': 0.,
                'sign': -1,
                'BC': "V==0",
-               'coordinates': "cartesian"}
+               'coordinates': "spherical"}
 
     compaction_column(velocity_Sramek, delta=1., **options)
     plt.savefig("fig/phi03_Sramek_delta_1.pdf")
@@ -216,6 +216,7 @@ def figures_compaction_only():
     compaction_column(velocity_Sramek, delta=.05, **options)
     plt.savefig("fig/phi03_Sramek_delta_005_sph.pdf")
 
+    options["coordinates"] = "spherical"
     compaction_column(velocity_Sumita_spher, K=1., **options)
     plt.savefig("fig/phi03_Sumita_K_1_sph.pdf")
     compaction_column(velocity_Sumita_spher, K=.5, **options)
@@ -309,10 +310,10 @@ if __name__ == "__main__":
                'BC': "V==0",
                'coordinates': "spherical"}
 
-    compaction_column(velocity_Sramek, delta=1., **options)
+    compaction_column(velocity_Sumita, delta=1., **options)
     #compaction_column_growth(velocity_Sumita, **options)
     #compaction_column_dVdz()
-    #figures_compaction_only()
+    figures_compaction_only()
     
 
     
